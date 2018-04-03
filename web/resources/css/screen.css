@@ -8,9 +8,10 @@ body {
 #container {
    margin: 0 auto;
    padding: 0 20px 10px 20px;
-   border: 1px solid #666666;
+   border: 2px solid #666666;
+   height: 50px;
    width: 1000px; /* subtract 40px from banner width for padding */
-   background: #FFFFFF url(#{request.contextPath}/resources/images/header.jpg) no-repeat;
+   background: #FFFFFF url(#{request.contextPath}/resources/images/banner.png) no-repeat;
    padding-top: 200px;
 }
 #sidebar {
