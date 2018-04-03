@@ -24,11 +24,11 @@
                      </h:column>
                  </h:dataTable>
 
-                <div>Total: #{basket.total} <h:commandLink action="checkout.xhtml" value="checkout"/></div><br/><br/>
+                <div>Total: #{basket.total} <h:commandButton action="checkout.xhtml" value="Comprar.."/></div><br/><br/>
                 
                 <!--Dentro de ui:insert nombrado como "content" va a insertarse todo el contenido definido denrto de ui:define nombrado como "content"-->
                 <ui:insert name="content">
-                    [Template content will be inserted here]
+                    [El contenido del Template va a ser insertado aca]
                 </ui:insert>
 
             </div>
