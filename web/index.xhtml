@@ -3,7 +3,9 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
-                     template="./template.xhtml">
+                template="./template.xhtml"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <!--Todo lo que ponga dentro del elemento ui:define nombrado como content va a ser insertado dentro del elemento ui:insert nombrado como "content"-->
     <ui:define name="content">
         <f:metadata>
@@ -11,15 +13,24 @@
         </f:metadata>
         <h:form>
             
-            <h:inputText value="#{productsBean.filter}">
+            <h:inputText value="#{productsBean.filter}" size="50" pt:placeholder="Filtro de productos con AJAX...">
                 <f:ajax event="keyup" render="products"/>
             </h:inputText>
             
-            <h:dataTable value="#{productsBean.products}" var="product" columnClasses="column" id="products">       
+            <h:dataTable value="#{productsBean.products}" 
+                         var="product"
+                         styleClass="miTabla"
+                         columnClasses="column" 
+                         id="products" 
+                         border="5"
+                         cellpadding="20"
+                         bgcolor="white">       
                 
-                <h:column>
-                    <h:graphicImage library="images" name="#{product.id}.jpg" width="150"/>
-                </h:column>
+              
+                    <h:column>
+                        <h:graphicImage library="images" name="#{product.name}.jpg" width="150"/>
+                    </h:column>
+                
                 
                 <h:column>
                     <f:facet name="header">Nombre</f:facet>
@@ -43,7 +54,7 @@
                 <h:column>
                     <h:commandButton value="Agregar a la Cesta" action="#{basket.addProduct(product)}"/>
                 </h:column>
-                
+              
             </h:dataTable>
         </h:form>
     </ui:define>

@@ -18,13 +18,14 @@
             
             <div id="content">
                 
-                <h:dataTable value="#{basket.productsInBasket}" var="product">
-                     <h:column>
+                <h:dataTable styleClass="miTablaProductosCesta" value="#{basket.productsInBasket}" var="product" bgcolor="gray" border="1">          
+                    <h:column>
+                         <f:facet name="header">Productos en Cesta</f:facet>
                          #{product.name}
                      </h:column>
                  </h:dataTable>
 
-                <div>Total: #{basket.total} <h:commandButton action="checkout.xhtml" value="Comprar.."/></div><br/><br/>
+                <div class="basketTotal">Total: #{basket.total} <h:commandButton action="checkout.xhtml" value="Comprar.."/></div><br/><br/>
                 
                 <!--Dentro de ui:insert nombrado como "content" va a insertarse todo el contenido definido denrto de ui:define nombrado como "content"-->
                 <ui:insert name="content">

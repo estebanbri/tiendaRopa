@@ -28,9 +28,9 @@ public class TestDataGenerator{
     public void setupTestData(){
         em.persist(new Product("Pantalones", 10.53));
         em.persist(new Product("Zapatillas", 20.73));
-        em.persist(new Product("Producto3", 23.67));
-        em.persist(new Product("Produto4", 26.31));
-        em.persist(new Product("Produto5", 77.83));
+        em.persist(new Product("Campera", 23.67));
+        em.persist(new Product("Short", 26.31));
+        em.persist(new Product("Remera", 77.83));
     }
 }
 
