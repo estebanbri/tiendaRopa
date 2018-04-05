@@ -18,6 +18,7 @@
             </h:inputText>
             
             <h:dataTable value="#{productsBean.products}" 
+                        
                          var="product"
                          styleClass="miTabla"
                          columnClasses="column" 
@@ -52,7 +53,7 @@
                 </h:column>
                 
                 <h:column>
-                    <h:commandButton value="Agregar a la Cesta" action="#{basket.addProduct(product)}"/>
+                    <h:commandButton class="btn btn-primary" value="Agregar a la Cesta" action="#{basket.addProduct(product)}"/>
                 </h:column>
               
             </h:dataTable>
