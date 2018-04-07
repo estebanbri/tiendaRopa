@@ -54,7 +54,8 @@ span.invalid {
 table.miTabla{
     margin-top: 20px;
     margin-left: 8%;
-     width: 800px;
+    width: 800px;
+    text-align: center;
 }
 
 table.miTablaProductosCesta{
