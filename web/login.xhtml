@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"       
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style type="text/css">
+            .tamanio{
+                width:200px;
+                height:30px
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="formLogin" prependId="false"
+                onsubmit="document.getElementById('formLogin').action = 'j_security_check';">
+
+            <h:panelGrid columns="2" border="10">
+
+                <f:facet name="header">
+                    Login
+                </f:facet>
+
+                <h:outputLabel for="j_username" value="Nombre de Usuario: " styleClass="tamanio"/>
+                <h:inputText id="j_username" required="true" styleClass="tamanio"/>
+
+                <h:outputLabel for="j_password" value="Contraseña: " styleClass="tamanio"/>
+                <h:inputSecret id="j_password" required="true" styleClass="tamanio"/>
+
+                <f:facet name="footer">
+                    <h:panelGroup style="display:block; text-align:center">
+                        <h:commandButton styleClass="tamanio" value="Login" type="submit"/>
+                    </h:panelGroup>
+                </f:facet>
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
