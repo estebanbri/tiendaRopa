@@ -10,32 +10,45 @@
                 width:200px;
                 height:30px
             }
+            #formulario{
+                display: block;
+                text-align: center;
+            }
+            form{
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10%;
+            }
         </style>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     </h:head>
     <h:body>
-        <h:form id="formLogin" prependId="false"
-                onsubmit="document.getElementById('formLogin').action = 'j_security_check';">
+        <div id="formulario">
+            <h:form id="formLogin" prependId="false"
+                    onsubmit="document.getElementById('formLogin').action = 'j_security_check';">
 
-            <h:panelGrid columns="2" border="10">
+                <h:panelGrid columns="2" border="10">
 
-                <f:facet name="header">
-                    Login
-                </f:facet>
+                    <f:facet name="header">
+                        Login
+                    </f:facet>
 
-                <h:outputLabel for="j_username" value="Nombre de Usuario: " styleClass="tamanio"/>
-                <h:inputText id="j_username" required="true" styleClass="tamanio"/>
+                    <h:outputLabel for="j_username" value="Nombre de Usuario: " styleClass="tamanio"/>
+                    <h:inputText id="j_username" required="true" styleClass="tamanio"/>
 
-                <h:outputLabel for="j_password" value="Contraseña: " styleClass="tamanio"/>
-                <h:inputSecret id="j_password" required="true" styleClass="tamanio"/>
+                    <h:outputLabel for="j_password" value="Contraseña: " styleClass="tamanio"/>
+                    <h:inputSecret id="j_password" required="true" styleClass="tamanio"/>
 
-                <f:facet name="footer">
-                    <h:panelGroup style="display:block; text-align:center">
-                        <h:commandButton styleClass="tamanio" value="Login" type="submit"/>
-                    </h:panelGroup>
-                </f:facet>
+                    <f:facet name="footer">
+                        <h:panelGroup style="display:block; text-align:center">
+                            <h:commandButton styleClass="tamanio" value="Login" type="submit"/>
+                        </h:panelGroup>
+                    </f:facet>
 
-            </h:panelGrid>
-        </h:form>
+                </h:panelGrid>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
