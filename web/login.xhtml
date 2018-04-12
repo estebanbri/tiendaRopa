@@ -10,7 +10,7 @@
                 width:200px;
                 height:30px
             }
-            #formulario{
+           #formulario{
                 display: block;
                 text-align: center;
             }
@@ -20,29 +20,39 @@
                 margin-right: auto;
                 margin-top: 10%;
             }
+            #output1,#output2{
+                text-align: right;
+            }
+            #titulo{
+                text-align: center;
+            }
         </style>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     </h:head>
     <h:body>
         <div id="formulario">
-            <h:form id="formLogin" prependId="false"
+            <h:form styleClass="form-group" id="formLogin" prependId="false" 
                     onsubmit="document.getElementById('formLogin').action = 'j_security_check';">
 
-                <h:panelGrid columns="2" border="10">
+                <h:panelGrid columns="2">
 
                     <f:facet name="header">
-                        Login
+                       <p id="titulo" class="h2">Login</p>
                     </f:facet>
 
-                    <h:outputLabel for="j_username" value="Nombre de Usuario: " styleClass="tamanio"/>
-                    <h:inputText id="j_username" required="true" styleClass="tamanio"/>
+                   
+                    
+                    <h:outputLabel id="output1" for="j_username" value="Nombre de Usuario:&nbsp;" />
+                    <h:inputText id="j_username" required="true" styleClass="form-control"/>
 
-                    <h:outputLabel for="j_password" value="Contraseña: " styleClass="tamanio"/>
-                    <h:inputSecret id="j_password" required="true" styleClass="tamanio"/>
+                    <h:outputLabel  id="output2" for="j_password" value="Contraseña:&nbsp;"/>
+                    <h:inputSecret id="j_password" required="true"  styleClass="form-control"/>
 
+                    <br/>
+                    
                     <f:facet name="footer">
                         <h:panelGroup style="display:block; text-align:center">
-                            <h:commandButton styleClass="tamanio" value="Login" type="submit"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="Login" type="submit"/>
                         </h:panelGroup>
                     </f:facet>
 
