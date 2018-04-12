@@ -10,7 +10,7 @@ body {
    border: 2px solid #666666;
    height: 50px;
    width: 1000px;  
-   background: #FFFFFF url(#{request.contextPath}/resources/images/banner.png) no-repeat;
+   background: #FFFFFF url(#{request.contextPath}/resources/images/banner_blue.gif) no-repeat;
    padding-top: 200px;
 }
 #sidebar {
@@ -44,9 +44,7 @@ span.invalid {
 
 #content {
     margin-top: 100px;
-    border: 5px;
-     
-    border-style: groove;
+   
 }
 
 .table{

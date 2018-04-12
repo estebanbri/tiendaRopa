@@ -14,18 +14,17 @@
         </f:metadata>
         <h:form>
            
-            <h:inputText style="display: block; margin: 0 50%;" value="#{productsBean.filter}" size="50" pt:placeholder="Filtro de productos con AJAX...">
+            <h:inputText class="form-control form-control-lg"  style="display: block;" value="#{productsBean.filter}" size="50" pt:placeholder="Filtro de productos con AJAX...">
                 <f:ajax event="keyup" render="products"/>
             </h:inputText>
+            
             
             <h:dataTable value="#{productsBean.products}" 
                          var="product"
                          styleClass="table table-hover table-condensed table-bordered"
                          columnClasses="column" 
-                         id="products" 
-                         border="5"
-                         cellpadding="20"
-                         bgcolor="white">       
+                         id="products"                        
+                         cellpadding="20">       
                 
               
                     <h:column>
