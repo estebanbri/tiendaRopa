@@ -16,7 +16,7 @@ public class OrderSMSNotifier {
     public void sendSomething(@Observes WebOrder webOrder){
         System.out.println("Datos de Orden " + 
                 webOrder.getOrderDate() +" "+
-                webOrder.getCustomer().getName()+" "+  
+                webOrder.getCustomer().getEmail()+" "+  
                 webOrder.getProducts());
     }
 }

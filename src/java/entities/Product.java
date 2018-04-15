@@ -25,6 +25,8 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+  
     private Double price;
 
     public Product() {
@@ -60,7 +62,11 @@ public class Product implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
-
+    
+    @Override
+    public String toString() {
+        return "Producto{nombre= " + name + ", precio= " + price + '}';
+    }
     
 
   

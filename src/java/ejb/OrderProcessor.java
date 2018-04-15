@@ -24,4 +24,5 @@ public class OrderProcessor {
     public void saveOrder(@Observes WebOrder webOrder) {
         em.persist(webOrder);
     }
+
 }
