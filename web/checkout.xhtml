@@ -20,12 +20,15 @@
                         <span jsf:id="span" class="input-group-addon"><i jsf:id="i" class="glyphicon glyphicon-envelope"></i></span>
                         <h:inputText value="#{basket.customer.email}" a:placeholder="Correo electronico" size="30" />
                     </div>
-
-                    <h:commandButton value="Checkout" action="#{basket.checkout}" />
-                    <h:commandButton value="Obtener Reporte" action="#{checkoutBean.generarReporte()}" />        
+                    
+                    <br></br>
+                    <h:commandButton  class="btn btn-primary"  value="Checkout" action="#{basket.checkout}" />
+                    
+                    <br></br><br></br>
+                    <h:commandButton  class="btn btn-primary"  value="Obtener Reporte" action="#{checkoutBean.generarReporte()}" />        
                 </h:form>
                 
-                <br></br>
+                
                 
                 
                 

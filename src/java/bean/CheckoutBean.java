@@ -5,13 +5,17 @@
  */
 package bean;
 
+import entities.Product;
+import entities.WebOrder;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
-import net.sf.jasperreports.engine.JREmptyDataSource;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
+import javax.inject.Inject;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 /**
  *
  * @author esteban
@@ -20,7 +24,8 @@ import net.sf.jasperreports.engine.JasperPrint;
 @RequestScoped
 public class CheckoutBean {
     
-    
+    @Inject
+    Basket basket;
 
     /**
      * Creates a new instance of CheckoutBean
@@ -29,9 +34,19 @@ public class CheckoutBean {
     }
     
     public void generarReporte() throws JRException{
-        String rutaReporte = "C:\\Users\\esteban\\Documents\\NetBeansProjects\\tiendaRopa\\reportes\\checkoutReport.jasper";
+        Map<String,Object> parametro = new HashMap();
+        Collection<Product> listaProduct = basket.getProductsInBasket();
+        
+        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(listaProduct);
+        
+        parametro.put("tituloParam", "Resumen de la compra");
+        parametro.put("emailParam", basket.getCustomer().getEmail());
+        parametro.put("totalParam", basket.getTotal());
+        
+        String rutaReporteJRXML = "C:\\Users\\esteban\\Documents\\NetBeansProjects\\tiendaRopa\\reportes\\checkoutReport";
         String rutaReportePDF = "C:\\Users\\esteban\\Documents\\NetBeansProjects\\tiendaRopa\\reportes\\checkoutReport.pdf";
-        JasperPrint jasperprint = JasperFillManager.fillReport(rutaReporte, null, new JREmptyDataSource());
+        JasperReport report = JasperCompileManager.compileReport(rutaReporteJRXML.concat(".jrxml"));
+        JasperPrint jasperprint = JasperFillManager.fillReport(report, parametro, beanColDataSource);
         JasperExportManager.exportReportToPdfFile(jasperprint, rutaReportePDF);
     }
     
